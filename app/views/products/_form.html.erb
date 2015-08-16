@@ -1,0 +1,52 @@
+<div class='product-form'>
+  <%= form_for @product do |f| %>
+      <div class='form-group'>
+        <p>
+          <%= f.label :title %><br>
+          <%= f.text_field :title, class: 'form-control' %>
+        </p>
+      </div>
+
+      <div class='form-group'>
+        <p>
+          <%= f.label :description %><br>
+          <%= f.text_area :description, class: 'form-control' %>
+        </p>
+      </div>
+
+      <div class='form-group'>
+        <p>
+          <%= f.label :price %><br>
+          <%= f.text_field :price, class: 'form-control' %>
+        </p>
+      </div>
+
+      <div class='form-group'>
+        <p>
+          <%= f.label :user %><br>
+          <%= f.collection_select :user_id, User.all, :id, :username, {prompt: true}, {class: 'form-control'} %>
+        </p>
+      </div>
+
+      <p>
+        <%= f.submit class: 'btn btn-default' %>
+      </p>
+  <% end %>
+
+
+  <% if @product.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+
+        <span class="sr-only">Error:</span>
+        <%= pluralize(@product.errors.count, "error") %> prohibited
+        this article from being saved:
+        <ul>
+          <% @product.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+
+</div>

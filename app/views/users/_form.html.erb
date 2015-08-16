@@ -1,0 +1,55 @@
+<div class="user-form">
+
+  <%= form_for @user do |f| %>
+      <div class="form-group">
+        <p>
+          <%= f.label :username %><br>
+          <%= f.text_field :username, class: "form-control" %>
+        </p>
+      </div>
+
+      <div class="form-group">
+        <p>
+          <%= f.label :email %><br>
+          <%= f.text_field :email, class: "form-control" %>
+        </p>
+      </div>
+
+      <div class="form-group">
+        <p>
+          <%= f.label :age %><br>
+          <%= f.text_field :age, class: "form-control" %>
+        </p>
+      </div>
+
+      <div class="form-group">
+        <p>
+          <%= f.label :city %><br>
+          <%= f.text_field :city, class: "form-control" %>
+        </p>
+      </div>
+
+
+      <p>
+        <%= f.submit class: "btn btn-default" %>
+      </p>
+  <% end %>
+
+  <% if @user.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+
+        <span class="sr-only">Error:</span>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this article from being saved:
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+
+  <p><%= link_to "Back to users list", users_path %></p>
+
+</div>

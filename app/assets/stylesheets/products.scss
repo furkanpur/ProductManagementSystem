@@ -1,0 +1,41 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.product-form {
+  width: 20%;
+  padding: 1%;
+  margin: auto;
+  background: #F5F5F5;
+  border-radius: 10px;
+}
+
+.product-feature {
+  width: 35%;
+  margin: auto;
+  padding: 1%;
+  background: #F5F5F5;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  color: #b7b7b7;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.product-feature strong {
+  font-weight: 400;
+  color: #666666;
+  font-size: 24px;
+}
+
+.product-list {
+  font-family: 'Open Sans', sans-serif;
+  background: #F5F5F5;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.product-list thead {
+  text-transform: uppercase;
+  font-weight: 600;
+}

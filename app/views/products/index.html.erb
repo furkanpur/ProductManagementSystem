@@ -1,0 +1,35 @@
+<h1>List of All Products</h1>
+
+<div class="container product-list">
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>User</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+
+
+    <% @product.each do |product| %>
+        <tbody>
+        <tr>
+          <td><%= product.title %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+          <td><%= product.user.username %></td>
+          <td><%= link_to 'Show', product_path(product) %></td>
+          <td><%= link_to 'Edit', edit_product_path(product) %></td>
+          <td><%= link_to 'Delete', product_path(product),
+                          method: :delete,
+                          data: {confirm: 'Are you sure?'} %></td>
+        </tr>
+        </tbody>
+    <% end %>
+  </table>
+</div>

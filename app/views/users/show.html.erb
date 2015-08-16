@@ -1,0 +1,25 @@
+<h1>Person Information</h1>
+
+<div class="product-feature">
+  <p>
+    <strong>Username </strong>
+    <%= @user.username %>
+  </p>
+
+  <p>
+    <strong>E-Mail </strong>
+    <%= @user.email %>
+  </p>
+
+  <p>
+    <strong>Age </strong>
+    <%= @user.age %>
+  </p>
+
+  <p>
+    <strong>City </strong>
+    <%= @user.city %> TL
+  </p>
+
+  <p><%= link_to "Back to users list", users_path %></p>
+</div>
