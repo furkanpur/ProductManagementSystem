@@ -18,8 +18,23 @@
 
   <p>
     <strong>City </strong>
-    <%= @user.city %> TL
+    <%= @user.city %>
   </p>
 
-  <p><%= link_to "Back to users list", users_path %></p>
 </div>
+
+<h1><%= @user.username %>'s Products</h1>
+
+<div class="product-feature">
+  <ul>
+    <% @user.products.each do |product| %>
+        <li>
+          <p><%= link_to product.title, product_path(product) %></p>
+        </li>
+    <% end %>
+  </ul>
+<br>
+  <p><%= link_to "Back to users list", users_path %></p>
+
+</div>
+
